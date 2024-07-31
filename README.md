@@ -9,5 +9,5 @@ https://github.com/hamster3156/ServiceLocator.git?path=Assets/Project/Library/Se
 https://qiita.com/game_hamster/items/dc266fdcc3099b5c48b5  
 https://qiita.com/game_hamster/items/2c5f8774b732105ca5a0
 
-- unitypackageのダウンロード
+- unitypackageのダウンロード  
 [こちらを押してください！](https://github.com/hamster3156/ServiceLocator/raw/main/ServiceLocator1.0.0.unitypackage)
