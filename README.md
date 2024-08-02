@@ -1,7 +1,7 @@
 # ServiceLocator
 クラスの参照関係をまとめてくれる機能です！  
 
-- `add package from git URLのリンク`
+- `add package from git URLのリンク`  
 https://github.com/hamster3156/ServiceLocator.git?path=Assets/Project/Library/ServiceLocator
 
 - ドキュメント
