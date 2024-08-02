@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace hamster.Library
+namespace Hamster.Library
 {
     public static class ServiceLocator
     {

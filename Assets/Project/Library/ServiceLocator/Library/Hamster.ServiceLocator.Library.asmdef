@@ -1,6 +1,6 @@
 {
-    "name": "hamster.ServiceLocator.Script",
-    "rootNamespace": "hamster.Library",
+    "name": "Hamster.ServiceLocator.Library",
+    "rootNamespace": "Hamster.ServiceLocator.Library",
     "references": [],
     "includePlatforms": [],
     "excludePlatforms": [],
