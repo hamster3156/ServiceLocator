@@ -2,7 +2,7 @@
 クラスの参照関係をまとめてくれる機能です！  
 
 - `add package from git URLのリンク`  
-https://github.com/hamster3156/ServiceLocator.git?path=Assets/Project/Library/ServiceLocator
+https://github.com/hamster3156/ServiceLocator.git?path=Assets/Library/ServiceLocator
 
 - ドキュメント
 少し古いですがサービスロケーターに関する内容の記事を上げています。    
