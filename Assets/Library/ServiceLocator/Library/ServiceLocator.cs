@@ -4,76 +4,91 @@ using UnityEngine;
 
 namespace Hamster.Library
 {
-    public static class ServiceLocator
+    public class ServiceLocator
     {
-        // ’PˆêƒCƒ“ƒXƒ^ƒ“ƒX‚ğŠÇ—‚·‚éƒfƒBƒNƒVƒ‡ƒiƒŠ
+        // å˜ä¸€ã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹ã‚’ç®¡ç†ã™ã‚‹ãƒ‡ã‚£ã‚¯ã‚·ãƒ§ãƒŠãƒª
         private static Dictionary<Type, object> singleInstanceDic = new Dictionary<Type, object>();
 
-        // “s“x¶¬ƒCƒ“ƒXƒ^ƒ“ƒX‚ğŠÇ—‚·‚éƒfƒBƒNƒVƒ‡ƒiƒŠ
+        // éƒ½åº¦ç”Ÿæˆã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹ã‚’ç®¡ç†ã™ã‚‹ãƒ‡ã‚£ã‚¯ã‚·ãƒ§ãƒŠãƒª
         private static Dictionary<Type, Type> factoryInstanceDic = new Dictionary<Type, Type>();
 
         /// <summary>
-        /// w’è‚³‚ê‚½Œ^‚ª“o˜^‚³‚ê‚Ä‚¢‚é‚©‚ğŠm”F‚·‚é
+        /// æŒ‡å®šã•ã‚ŒãŸå‹ãŒç™»éŒ²ã•ã‚Œã¦ã„ã‚‹ã‹ç¢ºèªã™ã‚‹
         /// </summary>
-        /// <typeparam name="T">Šm”F‚·‚éŒ^–¼</typeparam>
-        /// <returns>“o˜^‚³‚ê‚Ä‚¢‚éê‡‚ÍtrueA‚»‚¤‚Å‚È‚¢ê‡‚Ífalse</returns>
-        public static bool IsRegistered<T>() where T : class
+        /// <typeparam name="TCheck">ç¢ºèªã—ãŸã„å‹å</typeparam>
+        /// <returns>ç™»éŒ²æ¸ˆã¿ãªã‚‰trueã€å­˜åœ¨ã—ãªã‘ã‚Œã°falseãŒè¿”ã£ã¦ãã‚‹</returns>
+        public static bool IsRegistered<TCheck>()
         {
-            Type type = typeof(T);
+            Type type = typeof(TCheck);
             return singleInstanceDic.ContainsKey(type) || factoryInstanceDic.ContainsKey(type);
         }
 
         /// <summary>
-        /// ’PˆêƒCƒ“ƒXƒ^ƒ“ƒX‚ğ“o˜^‚·‚é
+        /// å˜ä¸€ã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹ã‚’ç™»éŒ²ã™ã‚‹
         /// </summary>
-        /// <typeparam name="T">“o˜^‚·‚éŒ^–¼</typeparam>
-        /// <param name="instance">“o˜^‚·‚éƒCƒ“ƒXƒ^ƒ“ƒX</param>
-        public static void Register<T>(T instance) where T : class
+        /// <typeparam name="T">ç™»éŒ²ã™ã‚‹å‹å</typeparam>
+        /// <param name="registerInstance">ç™»éŒ²ã™ã‚‹ã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹</param>
+        public static void Register<T>(T registerInstance) where T : class
         {
-            singleInstanceDic[typeof(T)] = instance;
+            singleInstanceDic[typeof(T)] = registerInstance;
         }
 
         /// <summary>
-        /// “s“x¶¬ƒCƒ“ƒXƒ^ƒ“ƒX‚ğ“o˜^‚·‚é
+        /// éƒ½åº¦ç”Ÿæˆã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹ã‚’ç™»éŒ²ã™ã‚‹
         /// </summary>
-        /// <typeparam name="TRegisterClass">“o˜^‚·‚éŒ^–¼</typeparam>
-        /// <typeparam name="TInstance">“o˜^‚·‚éƒCƒ“ƒXƒ^ƒ“ƒX</typeparam>
-        public static void Register<TRegisterClass, TInstance>() where TRegisterClass : class
+        /// <typeparam name="TRegisterType">ç™»éŒ²ã™ã‚‹å‹</typeparam>
+        /// <typeparam name="TRegisterInstance">ç™»éŒ²ã™ã‚‹ã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹</typeparam>
+        public static void Register<TRegisterType, TRegisterInstance>() where TRegisterType : class
         {
-            factoryInstanceDic[typeof(TRegisterClass)] = typeof(TInstance);
+            factoryInstanceDic[typeof(TRegisterType)] = typeof(TRegisterInstance);
         }
 
         /// <summary>
-        /// “o˜^‚³‚ê‚Ä‚¢‚éƒCƒ“ƒXƒ^ƒ“ƒX‚ğ’Pˆê‚Ü‚½‚Í“s“x¶¬‚ğ‚µ‚ÄƒCƒ“ƒXƒ^ƒ“ƒX‚ğ•Ô‚·
+        /// ç™»éŒ²ã•ã‚Œã¦ã„ã‚‹å˜ä¸€ã¾ãŸã¯éƒ½åº¦ç”Ÿæˆã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹ã‚’è¿”ã™
         /// </summary>
-        /// <typeparam name="T">æ“¾‚µ‚½‚¢Œ^–¼</typeparam>
-        /// <returns>“o˜^‚³‚ê‚Ä‚¢‚éƒCƒ“ƒXƒ^ƒ“ƒX</returns>
-        public static T Resolve<T>() where T : class
+        /// <typeparam name="TGetInstance">å–å¾—ã—ãŸã„ã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹</typeparam>
+        public static TGetInstance Resolve<TGetInstance>() where TGetInstance : class
         {
-            T instance = default;
-            Type type = typeof(T);
+            TGetInstance instance = default;
+            Type type = typeof(TGetInstance);
 
-            // ‚¢‚¸‚ê‚©‚ÌƒfƒBƒNƒVƒ‡ƒiƒŠ‚É“o˜^‚³‚ê‚Ä‚¢‚é‚©Šm”F‚·‚é
+            // ç™»éŒ²ã•ã‚Œã¦ã„ãªã„å ´åˆã¯nullã‚’è¿”ã™
+            if (IsRegistered<TGetInstance>() == false)
+            {
+                Debug.LogWarning($"{typeof(TGetInstance).Name} ã¯ServiceLocatorã«ç™»éŒ²ã•ã‚Œã¦ã„ãªã„å‹ã§ã™ã€‚");
+                return instance;
+            }
+
+            // ç™»éŒ²ã•ã‚Œã¦ã„ã‚‹ã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹ã‚’è¿”ã™
             if (singleInstanceDic.ContainsKey(type))
             {
-                // “o˜^‚³‚ê‚Ä‚¢‚éƒCƒ“ƒXƒ^ƒ“ƒX‚ğ•Ô‚·
-                instance = singleInstanceDic[type] as T;
-                return instance;
+                instance = singleInstanceDic[type] as TGetInstance;
+            }
+
+            // ç™»éŒ²ã•ã‚Œã¦ã„ã‚‹ã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹ã‚’ç”Ÿæˆã—ã¦è¿”ã™
+            if (factoryInstanceDic.ContainsKey(type))
+            {
+                instance = Activator.CreateInstance(factoryInstanceDic[type]) as TGetInstance;
+            }
+
+            return instance;
+        }
+
+        /// <summary>
+        /// ç™»éŒ²ã—ãŸã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹ã‚’è§£é™¤ã™ã‚‹
+        /// </summary>
+        public static void Unregister<TUnregister>() where TUnregister : class
+        {
+            Type type = typeof(TUnregister);
+            if (singleInstanceDic.ContainsKey(type))
+            {
+                singleInstanceDic.Remove(type);
             }
 
             if (factoryInstanceDic.ContainsKey(type))
             {
-                // “o˜^‚³‚ê‚Ä‚¢‚éƒCƒ“ƒXƒ^ƒ“ƒX‚ğ¶¬‚µ‚Ä•Ô‚·
-                instance = Activator.CreateInstance(factoryInstanceDic[type]) as T;
-                return instance;
+                factoryInstanceDic.Remove(type);
             }
-
-            if (instance == null)
-            {
-                Debug.LogWarning($"{typeof(T).Name} ‚ÍServiceLocator‚É“o˜^‚³‚ê‚Ä‚¢‚È‚¢Œ^‚Å‚·B");
-            }
-
-            return instance;
         }
     }
 }
