@@ -3,7 +3,7 @@
 https://github.com/hamster3156/ServiceLocator.git?path=Library/ServiceLocator
 
 `unitypackage`\
-https://github.com/hamster3156/ServiceLocator/releases/tag/unitypackage
+[https://github.com/hamster3156/ServiceLocator/releases/tag/unitypackage](https://github.com/hamster3156/ServiceLocator/releases/tag/v1.0.1)
 
 # 利用方法
 サービスロケーターはC#のstaticクラスで作成されているので、MonoBehaviour、C#どちらでも利用できます。\
