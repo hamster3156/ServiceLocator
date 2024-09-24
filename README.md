@@ -49,7 +49,5 @@ https://github.com/hamster3156/ServiceLocator.git?path=Library/ServiceLocator
  ServiceLocator.Unregister<ITest>();
 ```
 
-- ドキュメント
-少し古いですがサービスロケーターに関する内容の記事を上げています。    
-https://qiita.com/game_hamster/items/dc266fdcc3099b5c48b5  
-https://qiita.com/game_hamster/items/2c5f8774b732105ca5a0
+# アウトプットで書いた記事\
+https://qiita.com/game_hamster/items/9dd5c84c2de601e85224
