@@ -49,5 +49,5 @@ https://github.com/hamster3156/ServiceLocator.git?path=Library/ServiceLocator
  ServiceLocator.Unregister<ITest>();
 ```
 
-# アウトプットで書いた記事
+# アウトプットで作成した記事
 https://qiita.com/game_hamster/items/9dd5c84c2de601e85224
