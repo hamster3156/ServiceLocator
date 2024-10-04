@@ -2,8 +2,8 @@
 サービスロケーターパターンを勉強する時に作成したソースコードです。
 
 # ダウンロード方法
-`UPMリンク`\
-https://github.com/hamster3156/ServiceLocator.git?path=Library/ServiceLocator
+UPMリンク\
+`https://github.com/hamster3156/ServiceLocator.git?path=Library/ServiceLocator`
 
 `unitypackage`\
 [https://github.com/hamster3156/ServiceLocator/releases/tag/unitypackage](https://github.com/hamster3156/ServiceLocator/releases/tag/v1.0.1)
