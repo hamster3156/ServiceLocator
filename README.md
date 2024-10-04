@@ -5,7 +5,7 @@
 UPMリンク\
 `https://github.com/hamster3156/ServiceLocator.git?path=Library/ServiceLocator`
 
-`unitypackage`\
+unitypackage\
 [https://github.com/hamster3156/ServiceLocator/releases/tag/unitypackage](https://github.com/hamster3156/ServiceLocator/releases/tag/v1.0.1)
 
 # 利用方法
