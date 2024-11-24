@@ -70,14 +70,3 @@ crashlytics-build.properties
 # Temporary auto-generated Android Assets
 /[Aa]ssets/[Ss]treamingAssets/aa.meta
 /[Aa]ssets/[Ss]treamingAssets/aa/*
-
-# HotReloadAssetの単語を含む内容は追跡対象から外す
-*com.singularitygroup*
-
-# Assetsの全てのファイルを追跡対象から外す
-Assets/*
-
-# Projectだけ追跡するようにする
-!Assets/Project/
-!Assets/Project/**
-
