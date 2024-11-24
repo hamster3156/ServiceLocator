@@ -3,7 +3,7 @@
 
 # ダウンロード方法
 UPMリンク\
-`https://github.com/hamster3156/ServiceLocator.git?path=Library/ServiceLocator`
+`https://github.com/hamster3156/ServiceLocator.git?path=ServiceLocator`
 
 unitypackageはこちら\
 [https://github.com/hamster3156/ServiceLocator/releases/tag/unitypackage](https://github.com/hamster3156/ServiceLocator/releases/tag/v1.0.1)
