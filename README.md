@@ -2,7 +2,7 @@
 サービスロケーターパターンを勉強する時に作成したソースコードです。
 
 # ダウンロード方法
-UPMリンク\
+UPMリンク
 ```
 https://github.com/hamster3156/ServiceLocator.git?path=Assets/ServiceLocator
 ```
